@@ -72,6 +72,14 @@
   </div>
 </div>
 
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit">Submit</label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
 </fieldset>
 </form>
 
