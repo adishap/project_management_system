@@ -4,84 +4,116 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
+
+<div class="container">
+
 <form class="form-horizontal">
 <fieldset>
 
-<!-- Form Name -->
-<legend>Form Name</legend>
-
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="roll no">Roll number</label>  
-  <div class="col-md-4">
-  <input id="roll no" name="roll no" placeholder="Enter your Roll number" class="form-control input-md" required="" type="text">
-  <span class="help-block">Roll number of team no.1</span>  
-  </div>
+<label>Team Members</label>
+<div class="row">
+
+<div class="col-md-3">
+
+  <label class="  control-label" for="roll no">Roll number</label>  
+
+  <input id="roll no" name="roll_no1" placeholder="IT-2K11-02" class="form-control  " required="" type="text">
+  <span class="help-block">Roll number of team member 1</span>  
+</div>
+<!-- Text input-->
+<div class="col-md-3">
+  <label class="  control-label" for="roll no">Roll number</label>  
+
+  <input id="roll no" name="roll_no2" placeholder="IT-2K11-02" class="form-control  " type="text">
+  <span class="help-block">Roll number of team member 2</span>  
+ </div>
+
+<div class="col-md-3">
+<!-- Text input-->
+  <label class="  control-label" for="roll no">Roll number</label>  
+
+  <input id="roll no" name="roll no" placeholder="IT-2K11-21" class="form-control  " type="text">
+  <span class="help-block">Roll number of team member 3</span>  
+ </div>
+
+<div class="col-md-3">
+<!--Intentionally Blank-->
 </div>
 
+ </div>
+<br>
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="roll no">Roll number</label>  
-  <div class="col-md-4">
-  <input id="roll no" name="roll no" placeholder="Enter your Roll number" class="form-control input-md" required="" type="text">
-  <span class="help-block">Roll number of team no.2</span>  
-  </div>
+
+<div class="row">
+
+<div class="col-md-4">
+
+  <label class="  control-label" for="project_title">Project Title</label>  
+
+  <input id="project_title" name="project_title" placeholder="Project Title" class="form-control  " required="" type="text">
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="roll no">Roll number</label>  
-  <div class="col-md-4">
-  <input id="roll no" name="roll no" placeholder="Enter your Roll number" class="form-control input-md" required="" type="text">
-  <span class="help-block">Roll number of team no.3</span>  
-  </div>
+<div class="col-md-8">
+<!--Intentionally Blank-->
 </div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="project_title">Project tittle</label>  
-  <div class="col-md-4">
-  <input id="project_title" name="project_title" placeholder="Enter your project name" class="form-control input-md" required="" type="text">
-  <span class="help-block">Enter your project title</span>  
-  </div>
 </div>
-
+  <br>
 <!-- Textarea -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="abstract">Abstract</label>
-  <div class="col-md-4">                     
-    <textarea class="form-control" id="abstract" name="abstract">project abstract</textarea>
-  </div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+  <label class="  control-label" for="abstract">Abstract</label>
+                  
+    <textarea class="form-control" id="abstract" name="abstract" required="" placeholder="in not more than 100 words"></textarea>
 </div>
 
+<div class="col-md-6">
+  <!--Intentionally Blank-->
+</div>
+</div>
+
+<br>
 <!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="new password">New password </label>
-  <div class="col-md-4">
-    <input id="new password" name="new password" placeholder="passward" class="form-control input-md" required="" type="password">
-    <span class="help-block">Enter your new passward</span>
-  </div>
-</div>
+<div class="row">
 
+<div class="col-md-3">
+
+  <label class="  control-label" for="new password">New password </label>
+
+    <input id="new password" name="new password" placeholder="Passward" class="form-control  " required="" type="password">
+    </div>
+
+<div class="col-md-3">
 <!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="confirm password">Confirm password</label>
-  <div class="col-md-4">
-    <input id="confirm password" name="confirm password" placeholder="confirm your passward" class="form-control input-md" required="" type="password">
-    <span class="help-block">Re-write your password</span>
-  </div>
+  <label class="  control-label" for="confirm password">Confirm Password</label>
+ 
+    <input id="confirm password" name="confirm password" placeholder="Passward" class="form-control  " required="" type="password">
+ </div>
+
+
+<div class="col-md-6">
+  <!--Intentionally Blank-->
 </div>
 
+ </div>
+ <br>
 <!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit">Submit</label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
-  </div>
-</div>
-
+  <button id="submit" name="submit" class="btn btn-primary">Register</button>
+ 
 </fieldset>
 </form>
+
+</div>
+
+<div class="col-md-8">
+<!--Intentionally blank-->
+</div>
+
+</div>
+</div>
 
 </body>
 </html>
