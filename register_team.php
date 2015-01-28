@@ -1,3 +1,7 @@
+<?php
+include 'header.html';
+?>
+
 <html>
 <head>
   <title>Register Team</title>
@@ -9,7 +13,7 @@
 
 <form class="form-horizontal">
 <fieldset>
-
+<legend>Project Team Registration</legend>
 <!-- Text input-->
 <label>Team Members</label>
 <div class="row">
@@ -114,6 +118,9 @@
 
 </div>
 </div>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
