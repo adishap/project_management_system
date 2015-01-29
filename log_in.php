@@ -12,7 +12,7 @@ include 'header.html';
     <fieldset>
       
       <!-- Form Name -->
-      <label>Log In</label>
+      <legend>Log In</legend>
       
       <!-- Text input-->
       <div class="row">

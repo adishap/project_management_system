@@ -1,3 +1,6 @@
+<?php
+include 'db_connect.php';
+?>
 <html>
 <head>
 <title>Register Team</title>
@@ -9,7 +12,7 @@ include 'header.html';
 ?>
 <div class="container">
   
-  <form class="form-horizontal">
+  <form class="form-horizontal" action="#" method="post">
     <fieldset>
       <legend>Project Team Registration</legend>
       <!-- Text input-->
@@ -102,7 +105,8 @@ include 'header.html';
       </div>
       <br>
       <!-- Button -->
-      <button id="submit" name="submit" class="btn btn-primary">Register</button>
+      <input type="hidden" name="register_team" value="register_team">
+  <button type="submit" class="btn btn-primary">Register</button><br><br>
     </fieldset>
   </form>
 
@@ -112,3 +116,68 @@ include 'header.html';
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<?php
+if(isset($_POST['register_team'])){
+  
+  $roll_no1 = substr($_POST['roll_no1'],8);
+  $roll_no2 = substr($_POST['roll_no2'],8);
+  $roll_no3 = substr($_POST['roll_no3'],8);
+
+  $team_id = "2015vi".$roll_no1.$roll_no2.$roll_no3;
+
+  $project_title = $_POST['project_title'];
+  $abstract = $_POST['abstract'];
+  $user_email = $_POST['user_email'];
+  $new_password = $_POST['new_password'];
+  $confirm_password = $_POST['confirm_password'];
+
+  if($new_password == $confirm_password){
+    //if new password and confirm password match
+    $password = md5($new_password);
+  
+    //checks if email exists in project_aspirant table 
+    $check_email_query = "SELECT * FROM project_aspirants WHERE `user_email` = '".$user_email."' OR `team_id` = '".$team_id."'";
+    if($query_run = mysqli_query($con,$check_email_query)){
+      $query_num_rows = mysqli_num_rows($query_run);
+      
+      if($query_num_rows == 0){//if no then check if email exists in peers table
+        
+        $check_email_query = "SELECT * FROM peers WHERE `user_email` = '".$user_email."'";
+          
+          if($query_run = mysqli_query($con,$check_email_query)){
+          $query_num_rows = mysqli_num_rows($query_run);
+          
+            if($query_num_rows == 0){
+              
+              $insert_team_query = "INSERT INTO `project_aspirants`(`team_id`, `user_email`, `project_title`, `abstract`, `password`) VALUES ('".$team_id."','".$user_email."','".$project_title."','".$abstract."','".$password."')";
+              
+              if($query_run = mysqli_query($con,$insert_team_query)){
+                echo '<script>alert("You are succesfully registered.Your team Id is '.$team_id.'");</script>';
+              }
+
+            }
+            else{
+              $email_err = "Email id already exists";
+            }
+          }
+          else{
+            $db_err = "Error in checking email id in peers";
+          }
+      }
+      else{
+              $email_err = "Email id already exists";
+            }
+    }
+    else{
+            $db_err = "Error in checking email id in project aspirants";
+          }
+  }
+  else{//password and confirm password don't match
+    echo $password_error = "New password and confirm password don't match.";
+  }
+
+}
+?>
+
+
