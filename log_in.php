@@ -29,7 +29,7 @@ if(isset($_POST['log_in'])){
       			$row = mysqli_fetch_array($query_peer_run);
       			
       			$_SESSION['roll_no'] = $row['roll_no'];
-				header("location: peer_profile.php");			
+				header("location: allocate_project.php");			
       		}
       	}
       }
