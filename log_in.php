@@ -1,6 +1,7 @@
 <?php
 include 'db_connect.php';
-
+session_start();
+ob_start();
 //defining error variable
 $email_err = "  ";
 $db_err = "  ";
@@ -27,7 +28,7 @@ if(isset($_POST['log_in'])){
       			//email_id exists in peers table
       			$row = mysqli_fetch_array($query_peer_run);
       			
-      			$_SESSION['roll_no'] = $roll_no;
+      			$_SESSION['roll_no'] = $row['roll_no'];
 				header("location: peer_profile.php");			
       		}
       	}
@@ -35,9 +36,9 @@ if(isset($_POST['log_in'])){
       else{
       	//email_id exists in project aspirant table
       	$row = mysqli_fetch_array($query_project_run);
-      	
-      	$_SESSION['team_id'] = $team_id;
-		header("location: team_profile.php");	
+      	$_SESSION['team_id'] = $row['team_id'];
+		
+		header("location:profile_team.php");	
       }
     }
     else{
